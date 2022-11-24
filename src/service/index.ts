@@ -1,4 +1,4 @@
-import RSRequest from "./axios/request";
+import RSRequest from './axios/request';
 
 // Demo：
 // const MyRequest = new RSRequest({
@@ -20,10 +20,6 @@ import RSRequest from "./axios/request";
 //   code: 200, // 设置整个实例的code，会替代全局的DEFAULT_CODE
 //   clearRes: false // 设置整个实例是否返回清楚明了的res
 // });
-
-/**
- * 工段排产请求实例
- */
 
 export const MyRequest = new RSRequest({
   timeout: 15000,
