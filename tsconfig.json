@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    // 目标代码：ts -> js(es5/6/7)
+    "target": "esnext",
+    // 目标代码需要使用的模块化方案（commonjs modele es module）
+    "module": "esnext",
+    // 辅助导入功能：
+    "importHelpers": true,
+    // 以node的方式解析模块：
+    "moduleResolution": "node",
+    // 跳过一些库的类型检查：
+    "skipLibCheck": true,
+    // 是否允许commonjs和es module混合使用：
+    "esModuleInterop": true,
+    // 文件解析的baseurl
+    "baseUrl": ".",
+    // 指定在项目可以使用的基本库的类型（Window/Document/Proxy）
+    "lib": ["dom", "dom.iterable", "esnext", "scripthost"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "sourceMap": true,
+    // 严格检查(不能随便使用any)
+    "strict": true,
+    // 路径别名：其实在webpack中配置的alias才是真正的路径别名，用于引入文件；
+    // ts这里的只是相当于一种声明，声明@/assets这些是我们自己配置的路径别名，不要再去node_modules找文件了。
+    "paths": { "@/*": ["src/*"] }
+  },
+  // 哪些文件需要使用tsconfig.json来解析：
+  "include": ["src", "typings.d.ts", "config", "vite.config.ts"],
+  "exclude": ["node_modules", "dist", "typings", "**/__test__", "test", "docs", "tests"]
+}

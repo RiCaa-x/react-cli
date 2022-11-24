@@ -1,0 +1,85 @@
+.ant-table-tbody {
+  /* 修改框 */
+  .editable-cell-value-wrap {
+    padding: 5px 1px;
+    cursor: pointer;
+  }
+
+  .editable_input_error {
+    padding: 4px 0px;
+    border: 1px solid #ff4d4f !important;
+    border-radius: 2px;
+  }
+
+  .editable-row:hover .editable-cell-value-wrap {
+    padding: 4px 0;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+  }
+}
+
+.ant-modal {
+  padding: 0;
+  &.ant-modal-confirm {
+    .ant-modal-body {
+      padding-top: 24px;
+      .ant-modal-confirm-btns {
+        margin-top: 12px;
+      }
+    }
+  }
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+  .ant-modal-close-x {
+    width: 48px;
+    height: 48px;
+  }
+  .ant-modal-header {
+    height: 48px !important;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden !important;
+    padding: 0;
+    line-height: 48px;
+    box-sizing: border-box;
+    .ant-modal-title {
+      font-weight: 500;
+      color: #3a3f63;
+      font-size: 16px;
+      line-height: 48px;
+      padding-left: 24px;
+    }
+  }
+  .ant-modal-body {
+    box-sizing: border-box;
+    padding: 12px 24px;
+    overflow: hidden !important;
+
+    .active_table_row {
+      .ant-table-cell {
+        background: #f3f5f9 !important;
+      }
+      &:hover {
+        .ant-table-cell {
+          background: #f3f5f9 !important;
+        }
+      }
+    }
+  }
+  .ant-modal-footer {
+    .ant-btn {
+      width: 72px;
+    }
+  }
+}
+// big——modal
+.big-modal {
+  .ant-modal-content {
+    height: 920px !important;
+    overflow: hidden !important;
+
+    .ant-modal-body {
+      height: 872px !important;
+    }
+  }
+}

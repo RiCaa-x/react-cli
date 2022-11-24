@@ -1,0 +1,34 @@
+@import "./override-antd.less";
+
+html,
+body,
+#root {
+  font-family: SiYuan;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+// 重置滚动条样式：
+.reset_scroll_style {
+  /* 设置滚动条的样式 */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* 滚动槽 */
+  &::-webkit-scrollbar-track {
+  }
+
+  /* 滚动条滑块 */
+  &::-webkit-scrollbar-thumb {
+    background: #c8d1df;
+    border-radius: px;
+  }
+}
+
+// ::-webkit-scrollbar {
+//   display: none;
+// }
