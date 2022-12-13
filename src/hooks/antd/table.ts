@@ -1,6 +1,6 @@
-import { EMPTY_PLACE_HOLDER } from '@/constants';
-import { IColumnType, UseTableColumns } from '@/typings/antd';
-import { useMemo } from 'react';
+import { EMPTY_PLACE_HOLDER } from "@/constants";
+import { IColumnType, UseTableColumns } from "@/typings/antd";
+import { useMemo } from "react";
 
 export const useTableColumns: UseTableColumns = (columns, options) => {
   const { align, withIndex, fixed, placeHolder = EMPTY_PLACE_HOLDER } = options || {};
@@ -15,7 +15,7 @@ export const useTableColumns: UseTableColumns = (columns, options) => {
       return { align, fixed, dataIndex: item.key, render: value => value ?? placeHolder, ...item };
     });
 
-    if (withIndex) finalColumns.unshift({ title: '序号', align, fixed, render: (v, r, i) => `${i + 1}`, width: 80 });
+    if (withIndex) finalColumns.unshift({ title: "序号", align, fixed, render: (v, r, i) => `${i + 1}`, width: 80 });
 
     return finalColumns;
   }, [columns, options]);

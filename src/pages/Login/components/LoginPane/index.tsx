@@ -40,9 +40,7 @@ const LoginPane = () => {
     } catch {}
     if (res?.success) {
       // 记住密码：
-      values.remember
-        ? localCache.setCache(REMEMBER_LOGIN, values)
-        : localCache.removeCache(REMEMBER_LOGIN);
+      values.remember ? localCache.setCache(REMEMBER_LOGIN, values) : localCache.removeCache(REMEMBER_LOGIN);
       const userInfo = {
         username: res?.data?.actualName || ""
       };
@@ -78,7 +76,8 @@ const LoginPane = () => {
             rules={[{ required: true, message: "账号不能为空" }]}
             getValueFromEvent={val => {
               return val.target.value.replace(" ", "");
-            }}>
+            }}
+          >
             <Input className="input" placeholder="请输入账号" allowClear autoComplete="off" />
           </Form.Item>
           <Form.Item
@@ -88,7 +87,8 @@ const LoginPane = () => {
             rules={[{ required: true, message: "密码不能为空" }]}
             getValueFromEvent={val => {
               return val.target.value.replace(" ", "");
-            }}>
+            }}
+          >
             <Input.Password className="input" placeholder="请输入密码" autoComplete="off" />
           </Form.Item>
           <Form.Item className="remember-account" name="remember" valuePropName="checked">

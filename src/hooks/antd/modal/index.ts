@@ -1,8 +1,8 @@
-import { UniversalModalRef } from '@/typings/antd';
-import { SetState } from 'ahooks/lib/useSetState';
-import { ModalProps } from 'antd';
-import React, { useEffect } from 'react';
-export * from './withModal';
+import { UniversalModalRef } from "@/typings/antd";
+import { SetState } from "ahooks/lib/useSetState";
+import { ModalProps } from "antd";
+import React, { useEffect } from "react";
+export * from "./withModal";
 
 interface ModalContextType extends UniversalModalRef {
   props: ModalProps;

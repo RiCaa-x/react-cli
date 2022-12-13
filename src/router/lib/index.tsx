@@ -102,9 +102,7 @@ export function mapAllRouter(routes: IMyRouteObject[]): RouteObject[] {
     if (item.element) {
       curElement = item.element;
     } else if (item.elementPath) {
-      curRouter.errorElement = (
-        <Navigate to="/errorElement" replace state={{ errPath: item.elementPath }} />
-      ); // 导入失败时展示的组件
+      curRouter.errorElement = <Navigate to="/errorElement" replace state={{ errPath: item.elementPath }} />; // 导入失败时展示的组件
       curElement = getDynamicElement(item.elementPath);
     }
 

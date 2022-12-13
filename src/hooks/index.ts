@@ -1,3 +1,2 @@
-export * from './antd';
-export * from './useAppConfiguration';
-
+export * from "./antd";
+export * from "./useAppConfiguration";

@@ -1,6 +1,6 @@
-import MyLoading from '@/baseCpns/MyLoading';
-import React, { memo } from 'react';
-import styled from 'styled-components';
+import MyLoading from "@/baseCpns/MyLoading";
+import React, { memo } from "react";
+import styled from "styled-components";
 
 interface IPropsType {
   loading?: boolean;

@@ -120,13 +120,7 @@ export const EditableCell = <T extends AnyObject>({
           switch (editType) {
             case "input":
               formItem = (
-                <Input
-                  style={{ width: "100%" }}
-                  {...editItemConfig}
-                  ref={inputRef}
-                  onPressEnter={save}
-                  onBlur={save}
-                />
+                <Input style={{ width: "100%" }} {...editItemConfig} ref={inputRef} onPressEnter={save} onBlur={save} />
               );
               break;
             case "inputNumber":

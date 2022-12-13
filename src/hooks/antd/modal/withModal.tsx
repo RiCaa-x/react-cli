@@ -1,8 +1,8 @@
-import { UniversalModalRef } from '@/typings/antd';
-import { useMemoizedFn, useSetState } from 'ahooks';
-import { Modal, ModalProps } from 'antd';
-import React, { forwardRef, memo, useImperativeHandle } from 'react';
-import { ModalContext } from '.';
+import { UniversalModalRef } from "@/typings/antd";
+import { useMemoizedFn, useSetState } from "ahooks";
+import { Modal, ModalProps } from "antd";
+import React, { forwardRef, memo, useImperativeHandle } from "react";
+import { ModalContext } from ".";
 
 type WithModal = <PropsType, T extends React.ComponentType<any> = React.ComponentType<PropsType>>(
   Component: T,
@@ -12,7 +12,7 @@ type WithModal = <PropsType, T extends React.ComponentType<any> = React.Componen
 >;
 
 const regularModalProps: ModalProps = {
-  width: '90vw',
+  width: "90vw",
   footer: null,
   destroyOnClose: true,
   maskClosable: __ISDEV__,
@@ -31,7 +31,7 @@ export const withModal: WithModal = (Component, modalProps) => {
       useImperativeHandle(ref, () => ({ open, close }));
 
       return (
-        <ModalContext.Provider value={{ props: state, setProps: setState,open,close }}>
+        <ModalContext.Provider value={{ props: state, setProps: setState, open, close }}>
           <Modal {...regularModalProps} open={state.open} onCancel={close} {...state}>
             {React.createElement(Component, props)}
           </Modal>

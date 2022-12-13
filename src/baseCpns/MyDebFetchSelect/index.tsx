@@ -1,10 +1,10 @@
-import { Select, Spin } from 'antd';
-import type { SelectProps } from 'antd/es/select';
-import debounce from 'lodash/debounce';
-import React, { useMemo, useRef, useState } from 'react';
+import { Select, Spin } from "antd";
+import type { SelectProps } from "antd/es/select";
+import debounce from "lodash/debounce";
+import React, { useMemo, useRef, useState } from "react";
 
 interface DebounceSelectProps<ValueType = any>
-  extends Omit<SelectProps<string | ValueType | ValueType[]>, 'options' | 'children'> {
+  extends Omit<SelectProps<string | ValueType | ValueType[]>, "options" | "children"> {
   fetchOptions: (search: string) => Promise<ValueType[]>;
   debounceTimeout?: number;
 }
@@ -40,7 +40,7 @@ function DebounceSelect<ValueType extends { key?: string; label: React.ReactNode
 
   // 首次聚焦就拿一次数据：
   const firstFocusFetch = () => {
-    fetchRef.current === 0 && debounceFetcher('');
+    fetchRef.current === 0 && debounceFetcher("");
   };
 
   return (

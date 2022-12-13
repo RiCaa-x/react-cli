@@ -6,7 +6,7 @@ interface loginInfo {
 }
 
 export function _testApi(params: any) {
-  return MyRequest.get<string>({
+  return MyRequest.get({
     url: "/aps_backend/plannedJobsheetRecord/getClientIp",
     params,
 
@@ -24,13 +24,6 @@ export function _testApi(params: any) {
     code: 200,
     // 可以灵活的控制某个接口是否返回清楚明了的res，优先级最高，会替代实例/全局的clearRes：
     clearRes: true
-  });
-}
-
-export function delTest(data: string[]) {
-  return MyRequest.post({
-    url: "/api/standCraft/deleteStandCraft",
-    data
   });
 }
 

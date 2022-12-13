@@ -54,8 +54,7 @@ export const Wrapper = styled.div`
       border-color: ${(props: IPropsType) => props.theme.borderColor} !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
-      border-inline-end: ${(props: IPropsType) =>
-        props.bordered ? `1px solid ${props.theme.borderColor}` : 0};
+      border-inline-end: ${(props: IPropsType) => (props.bordered ? `1px solid ${props.theme.borderColor}` : 0)};
       /* 最后一格不需要边框： */
       &:last-of-type {
         border-inline-end: 0 !important;

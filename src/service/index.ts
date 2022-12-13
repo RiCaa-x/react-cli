@@ -1,4 +1,4 @@
-import RSRequest from './axios/request';
+import RSRequest from "./axios/request";
 
 // Demo：
 // const MyRequest = new RSRequest({

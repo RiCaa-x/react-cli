@@ -16,11 +16,7 @@ const createRouter = __ISDEV__ ? createBrowserRouter : createHashRouter;
 
 export function getAllRoutes(dynamicRoutes: IMyRouteObject[], needNoLayouts: boolean = true) {
   const { widthLayouts, noLayouts } = defaultRoutes;
-  return [
-    ...(widthLayouts || []),
-    ...(noLayouts && needNoLayouts ? noLayouts : []),
-    ...dynamicRoutes
-  ];
+  return [...(widthLayouts || []), ...(noLayouts && needNoLayouts ? noLayouts : []), ...dynamicRoutes];
 }
 
 export default () => {

@@ -55,13 +55,9 @@ const MyScrollTable = <T extends AnyObject>({
   const [scroll, setScroll] = useState({ y: tableHeight || defaultTableHeight });
 
   const resize = useMemoizedFn(() => {
-    const boxHeight = tableHeight
-      ? tableHeight
-      : tableWrapperRef.current?.offsetHeight || defaultTableHeight;
+    const boxHeight = tableHeight ? tableHeight : tableWrapperRef.current?.offsetHeight || defaultTableHeight;
     const bodyHeight =
-      boxHeight -
-      headHeight -
-      (tableProps.pagination || typeof tableProps.pagination === "undefined" ? 56 : 0);
+      boxHeight - headHeight - (tableProps.pagination || typeof tableProps.pagination === "undefined" ? 56 : 0);
 
     // 1. 设置table的scroll：
     setScroll({ y: bodyHeight });
@@ -92,7 +88,8 @@ const MyScrollTable = <T extends AnyObject>({
       headHeight={headHeight}
       headerSplit={headerSplit}
       bordered={bordered}
-      style={{ height: tableHeight || "100%" }}>
+      style={{ height: tableHeight || "100%" }}
+    >
       <Table
         bordered={bordered}
         components={tableProps.pagination === false ? VT : undefined}
@@ -100,11 +97,7 @@ const MyScrollTable = <T extends AnyObject>({
         rowClassName={(record, i) => getRowClassName<T>(record, i, rowClassName)}
         columns={
           editCellConfig?.handleSave && VT.body?.cell
-            ? formatEditColumnsType<T>(
-                columns,
-                editCellConfig.handleSave,
-                editCellConfig?.allOptions
-              )
+            ? formatEditColumnsType<T>(columns, editCellConfig.handleSave, editCellConfig?.allOptions)
             : columns
         }
         scroll={{ ...tableScroll, ...scroll }}

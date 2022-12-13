@@ -21,14 +21,8 @@ export default class RSRequest {
 
     // 每个实例各自的全局拦截器：
     const interceptor = options.interceptors;
-    this.instance.interceptors.request.use(
-      interceptor?.requestInterceptor,
-      interceptor?.requestInterceptorCatch
-    );
-    this.instance.interceptors.response.use(
-      interceptor?.responseInterceptor,
-      interceptor?.responseInterceptorCatch
-    );
+    this.instance.interceptors.request.use(interceptor?.requestInterceptor, interceptor?.requestInterceptorCatch);
+    this.instance.interceptors.response.use(interceptor?.responseInterceptor, interceptor?.responseInterceptorCatch);
 
     // 公用的全局拦截器：
     this.instance.interceptors.request.use(
@@ -63,11 +57,7 @@ export default class RSRequest {
         NProgress.done();
 
         // IE 8-9
-        if (
-          res.data == null &&
-          res.config.responseType === "json" &&
-          res.request.responseText != null
-        ) {
+        if (res.data == null && res.config.responseType === "json" && res.request.responseText != null) {
           try {
             res.data = JSON.parse(res.request.responseText);
           } catch {}

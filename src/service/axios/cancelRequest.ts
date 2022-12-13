@@ -1,4 +1,4 @@
-import qs from 'qs';
+import qs from "qs";
 
 export const CancelRequest = {
   // 缓存请求的取消cancleToken，映射关系为： （接口url+params：cancleTokenFn）
@@ -8,7 +8,7 @@ export const CancelRequest = {
   clearCacheWithKey: function (key: string, cancleRequest: boolean = false) {
     if (key) {
       const cancelToken = this.cache.get(key);
-      if (cancelToken && typeof cancelToken === 'function') {
+      if (cancelToken && typeof cancelToken === "function") {
         cancleRequest && cancelToken();
         this.cache.delete(key);
       }
@@ -28,10 +28,10 @@ export function getFullUrl(config: any) {
   let fullUrl = config.url;
 
   const method = config.method.toLowerCase();
-  if (['get', 'delete'].includes(method) && config.params && typeof config.params === 'object') {
+  if (["get", "delete"].includes(method) && config.params && typeof config.params === "object") {
     fullUrl += qs.stringify(config.params, { addQueryPrefix: true });
-  } else if (['post', 'put', 'patch'].includes(method) && config.data && typeof config.data === 'object') {
-    fullUrl += `_${qs.stringify(config.data, { arrayFormat: 'brackets' })}`;
+  } else if (["post", "put", "patch"].includes(method) && config.data && typeof config.data === "object") {
+    fullUrl += `_${qs.stringify(config.data, { arrayFormat: "brackets" })}`;
   }
 
   return fullUrl;

@@ -36,7 +36,8 @@ const MyLayout: React.FC = () => {
           collapsedWidth={64}
           collapsed={collapsed}
           trigger={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-          onCollapse={value => setCollapsed(value)}>
+          onCollapse={value => setCollapsed(value)}
+        >
           <div className="sm_logo">
             <img className="logo" src={logo} alt="logo" />
             {!collapsed && <img className="logo_text" src={logoText} alt="text" />}

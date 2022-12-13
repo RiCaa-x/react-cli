@@ -1,13 +1,13 @@
 // 临时使用的动态路由假数据，后续需要走接口：
-import { IMyRouteObject } from '@/router/lib';
+import { IMyRouteObject } from "@/router/lib";
 
 export function getDynamicRoutes() {
   const dynamicRoutes: IMyRouteObject[] = [
     {
-      label: 'RiCaa',
-      path: '/RiCaa',
-      elementPath: 'demoDynamicRoute.ts',
-      icon: 'menu_product.svg'
+      label: "RiCaa",
+      path: "/RiCaa",
+      elementPath: "demoDynamicRoute.ts",
+      icon: "menu_product.svg"
     }
     // {
     //   label: "二级菜单",

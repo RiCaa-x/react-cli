@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import logos from '@/assets/pngs/飞航LOGO.png'
+import styled from "styled-components";
+import logos from "@/assets/pngs/飞航LOGO.png";
 
 export const Wrapper = styled.div`
   padding-right: 16px;

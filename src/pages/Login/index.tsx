@@ -1,6 +1,6 @@
-import { memo } from 'react';
-import LoginPane from './components/LoginPane';
-import { LoginWapper } from './styled';
+import { memo } from "react";
+import LoginPane from "./components/LoginPane";
+import { LoginWapper } from "./styled";
 
 const Login = () => {
   return (

@@ -29,11 +29,7 @@ export function getTimeStamp(time: any) {
 }
 
 /** 获取最近的n天:  */
-export function getLatestDays(
-  n: number = 1,
-  format: string = "YYYY-MM-DD HH:mm:ss",
-  isNow: boolean = false
-) {
+export function getLatestDays(n: number = 1, format: string = "YYYY-MM-DD HH:mm:ss", isNow: boolean = false) {
   const startTime = dayjs().subtract(n, "days").startOf("days").format(format);
   const endTime = dayjs().endOf("days").format(format);
   const now = dayjs().format(format); // 当前时间

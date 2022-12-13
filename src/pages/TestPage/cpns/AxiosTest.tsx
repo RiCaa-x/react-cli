@@ -1,18 +1,12 @@
-import { delTest } from "@/service/api/login";
-import { uniqMessage } from "@/utils";
+import { _testApi } from "@/service/api/login";
 import { Button } from "antd";
 import { memo } from "react";
 
 const AxiosTest = () => {
-  const request = async () => {
-    delTest([])
-      .then(res => {
-        console.log("res", res);
-      })
-      .catch(err => {
-        console.log("err:", err);
-        uniqMessage("error", err.message + 111);
-      });
+  const request = () => {
+    _testApi({ data: 1 }).then(res => {
+      console.log(res);
+    });
   };
 
   return (
