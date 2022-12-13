@@ -1,6 +1,4 @@
 import dayjs from "dayjs";
-import moment from "moment";
-moment.locale("zh-cn");
 
 // 获取最近n天 [前n天的00:00:00, now]：
 export function getPrevDayRange(n: number = 1, format: string = "YYYY-MM-DD") {

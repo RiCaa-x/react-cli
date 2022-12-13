@@ -6,7 +6,7 @@ interface loginInfo {
 }
 
 export function _testApi(params: any) {
-  return MyRequest.get({
+  return MyRequest.get<string>({
     url: "/aps_backend/plannedJobsheetRecord/getClientIp",
     params,
 
