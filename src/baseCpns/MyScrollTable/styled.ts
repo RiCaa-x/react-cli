@@ -16,7 +16,7 @@ type IPropsType = ThemedStyledProps<
 export const Wrapper = styled.div`
   overflow: hidden;
   box-sizing: border-box;
-  border: ${(props: IPropsType) => (props.bordered ? `1px solid ${props.theme.borderColor}` : 0)};
+  border: ${(props: IPropsType) => (props.bordered ? `1px solid ${props.theme.colorBorder}` : 0)};
   border-radius: ${(props: IPropsType) => props.theme.borderRadius}px;
 
   .ant-table-wrapper {
@@ -49,12 +49,12 @@ export const Wrapper = styled.div`
 
     /* 统一修改单元格： */
     .ant-table-cell {
-      color: ${(props: IPropsType) => props.theme.fontColor};
+      color: ${(props: IPropsType) => props.theme.colorText};
       font-size: ${(props: IPropsType) => props.theme.fontSize}px;
-      border-color: ${(props: IPropsType) => props.theme.borderColor} !important;
+      border-color: ${(props: IPropsType) => props.theme.colorBorder} !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
-      border-inline-end: ${(props: IPropsType) => (props.bordered ? `1px solid ${props.theme.borderColor}` : 0)};
+      border-inline-end: ${(props: IPropsType) => (props.bordered ? `1px solid ${props.theme.colorBorder}` : 0)};
       /* 最后一格不需要边框： */
       &:last-of-type {
         border-inline-end: 0 !important;
