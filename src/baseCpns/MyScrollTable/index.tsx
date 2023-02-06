@@ -1,4 +1,4 @@
-import { useMemoizedFn } from "ahooks";
+import { useMemoizedFn, useSize, useUpdateEffect } from "ahooks";
 import { Table, TableProps } from "antd";
 import { ColumnsType } from "antd/es/table";
 import { memo, ReactElement, useEffect, useRef, useState } from "react";
@@ -64,14 +64,10 @@ const MyScrollTable = <T extends AnyObject>({
     // 2. 找出当前组件自定义的style标签，如果没有就新建并添加进head
     setTableStyleToHead(tableKey, bodyHeight, headHeight);
   });
-
-  useEffect(() => {
-    resize();
-    window.addEventListener("resize", resize);
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  const size = useSize(tableWrapperRef);
+  useUpdateEffect(() => {
+    size?.height && resize();
+  }, [size?.height]);
 
   const [VT, setVT] = useVT(() => ({ scroll }), [scroll]);
 
